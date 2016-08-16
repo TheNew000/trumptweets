@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="tweetApp">
+<head>
+    <title>Make America Brannigan</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+    <script type="text/javascript" src="js/tweetModule.js"></script>
+    <script type="text/javascript" src="js/tweetController.js"></script>
+    <script type="text/javascript" src="js/layoutController.js"></script>
+</head>
+<body ng-cloak>
+<!-- <tweet-hello></tweet-hello>
+<div hello-attr></div>
+<input type="text" ng-model="myColor" name="">
+<div class="hello-class"></div>
+<div turn-me-blue>Hover over me and I will console! I'm a custom directive!</div> -->
+<div layout="row">
+    <section ng-controller="layoutCtrl" layout-fill layout="column">
+        <div ng-repeat="row in grid" flex layout="row">
+          <div ng-repeat="item in row" flex layout="row" layout-align="center center" layout-margin class="box">
+            <h1 class="md-title">{{ item }}</h1>
+          </div>
+        </div>
+    </section>
+</div>
+    <div ng-view></div> 
+</body>
+</html>
